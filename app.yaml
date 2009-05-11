@@ -1,0 +1,34 @@
+application: 7cerebros
+version: 7
+runtime: python
+api_version: 1
+
+handlers:
+
+# Static resources
+
+- url: /robots.txt
+  static_files: static/common/robots.txt
+  upload: static/common/robots.txt
+
+- url: /favicon.ico
+  static_files: static/common/favicon.ico
+  upload: static/common/favicon.ico
+
+- url: /images
+  static_dir: static/images
+
+- url: /flash
+  static_dir: static/flash
+
+- url: /css
+  static_dir: static/css
+
+- url: /js
+  static_dir: static/js
+
+# Web controllers
+
+- url: /.*
+  script: controller/main.py
+
