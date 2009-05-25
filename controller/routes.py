@@ -3,9 +3,9 @@ __docformat__='restructuredtext'
 
 __all__ = ['ROUTES']
 
-from controller.common import PublicPage, PrivatePage, AdminPage
+from controller.base import PublicPage, PrivatePage, AdminPage
 
-def route(controller_class, *args, **kwargs):
+def bind(controller_class, *args, **kwargs):
     """ Utility function to bind arguments to controller classes """
     class Page(controller_class):
         def __init__(self):
@@ -15,9 +15,9 @@ def route(controller_class, *args, **kwargs):
 # Map all URLs to their controllers here
 
 ROUTES = [
-    ('/', route(PublicPage, 'common/index.mako')),
-    ('/login', route(PublicPage, 'common/login.mako')),
-    ('/concurso/tetravex', route(PrivatePage, 'concurso/tetravex.mako')),
-    ('/concurso/sokoban', route(AdminPage, 'concurso/sokoban.mako')),
+    ('/', bind(PublicPage, 'common/index.mako')),
+    ('/login', bind(PublicPage, 'common/login.mako')),
+    ('/concurso/tetravex', bind(PrivatePage, 'concurso/tetravex.mako')),
+    ('/concurso/sokoban', bind(AdminPage, 'concurso/sokoban.mako')),
 ]
 

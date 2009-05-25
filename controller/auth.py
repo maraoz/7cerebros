@@ -78,6 +78,8 @@ def is_admin(user):
 def signup(username, password, confirm_password, mail, firstname, \
         lastname, birthdate, dni, registration_reference):
     USERNAME_PATTERN = re.compile('[a-z][a-z0-9_]+')
+    EMAIL_PATTERN = re.compile('^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$')
+    # TODO
     errors = {}
     if not (len(username) >= 4 and USERNAME_PATTERN.match(username)):
         errors['username'] = username
