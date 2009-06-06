@@ -8,24 +8,24 @@ handlers:
 # Static resources
 
 - url: /robots.txt
-  static_files: static/common/robots.txt
-  upload: static/common/robots.txt
+  static_files: assets/common/robots.txt
+  upload: assets/common/robots.txt
 
 - url: /favicon.ico
-  static_files: static/common/favicon.ico
-  upload: static/common/favicon.ico
+  static_files: assets/common/favicon.ico
+  upload: assets/common/favicon.ico
 
 - url: /images
-  static_dir: static/images
+  static_dir: assets/images
 
 - url: /flash
-  static_dir: static/flash
+  static_dir: assets/flash
 
 - url: /css
-  static_dir: static/css
+  static_dir: assets/css
 
 - url: /js
-  static_dir: static/js
+  static_dir: assets/js
 
 # Web controllers
 

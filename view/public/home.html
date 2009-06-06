@@ -1,0 +1,71 @@
+{% extends "../common/default.html" %}
+
+{% block css %}
+<style type="text/css">
+form {
+    float: left;
+    width: 200px;
+    background: #99FF00;
+    padding: 18px;
+    margin: 12px;
+}
+form h2 {
+    font-size: 12pt;
+    margin: 0 0 8px 0;
+}
+#username, #password {
+    width: 190px;
+}
+#submit {
+    float: right;
+}
+form p, form label {
+    font-size: 10pt;
+}
+form input {
+    font-size: 12pt;
+}
+p.info {
+    font-size: 14pt;
+    margin: 24px;
+    float: left;
+    width: 400px;
+    line-height: 32pt;
+}
+p.info strong {
+    font-size: 20pt;
+}
+</style>
+{% endblock %}
+{% block js %}
+<script type="text/javascript">
+function setValueAndColor(id, value, color) {
+	$(id).set('value', value);
+	$(id).setStyle('color', color);
+}
+window.addEvent('domready', function () {
+	setValueAndColor('username', 'usuario', 'gray');
+	setValueAndColor('password', 'contraseña', 'gray');
+	$('username').addEvent('focus', function () {
+		setValueAndColor('username', '', 'black');
+		$('username').removeEvents('focus');
+	});
+	$('password').addEvent('focus', function () {
+		setValueAndColor('password', '', 'black');
+		$('password').removeEvents('focus');
+	});
+});
+</script>
+{% endblock %}
+
+{% block content %}
+<form method="post" action="/login">
+<h2>Ingresar</h2>
+<input name="username" id="username" type="text" value="" tabindex="1" /><br />
+<input name="password" id="password" type="password" value="" tabindex="2" /><br />
+<input name="remember" id="remember" type="checkbox" tabindex="3" /><label for="remember">Recordarme</label>
+<input id="submit" type="submit" value="Ingresar" tabindex="4" />
+<p>¿Todavía no sos usuario? <a href="/registrate">Registrate</a>. Es rápido y gratis.</p>
+</form>
+<p class="info"><strong>7cerebros</strong> es un <strong>concurso de juegos de ingenio</strong> en la web que ofrece un <strong>premio de $5000</strong> al que logre resolver 7 problemas en el menor tiempo. <a href="/info">Más información</a></p>
+{% endblock %}

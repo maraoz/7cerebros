@@ -1,0 +1,127 @@
+/* Main layout */
+body {
+    width: 940px;
+    margin: 0 auto;
+    text-align: center;
+    background: white; 
+    font-family: Helvetica, Arial, sans-serif;
+}
+a {
+    color: navy;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+#header, #menu, #content, #sidebar, #footer {
+    overflow: hidden;
+    display: inline-block;
+    text-align: left;
+}
+#header, #menu, #footer {
+    width: 100%;
+}
+#content, #sidebar {
+    float: left;
+}
+#content {
+    width: 740px;
+    background: white;
+}
+#sidebar {
+    width: 200px;
+}
+#header {
+    background: left center no-repeat url(/images/logo-7cerebros.png);
+    height: 200px;
+}
+#header h1 {
+    display: none;
+}
+#header .tagline {
+    float: right;
+    margin: 16px;
+    font-style: italic;
+    color: #CCCCCC;
+    font-weight: bold;
+}
+#header .curiosidades {
+    clear: right;
+    float: right;
+    text-align: right;
+    font-size: 10pt;
+    width: 250px;
+    margin: 16px;
+}
+#footer {
+    clear:left;
+    background: url(/images/green-bar-center.gif);
+    height: 44px;
+    padding: 0;
+    margin: 0;
+}
+.bar, .bar-left-wrap, .bar-right-wrap {
+    height: 44px;
+    padding: 0;
+    margin: 0;
+}
+.bar {
+    background: repeat-x url(/images/green-bar-center.gif);
+}
+.bar-left-wrap {
+    background: no-repeat top left url(/images/green-bar-left.gif);
+    padding-left: 5px;
+}
+.bar-right-wrap {
+    background: no-repeat top right url(/images/green-bar-right.gif);
+    padding-right: 5px;
+}
+#menu ul {
+    height: 44px;
+    width: 100%;
+    padding: 12px 0;
+    margin: 0;
+}
+#menu li {
+    display: inline;
+    margin: 12px;
+    font-weight: bold;
+}
+#footer p {
+    text-align: center;
+    margin: 0;
+    font-size: 8pt;
+    padding: 15px;
+}
+
+/* Twitter sidebar */
+#twitter_div {
+    background: #F8F8F8;
+    font-size: 8pt;
+    border: 1px solid #D6D6D6;
+    width: 192px;
+    padding: 3px;
+}
+#twitter_div h2 {
+    font-size: 10pt;
+    color: #66CC00;
+    text-align: center;
+}
+#twitter_div a {
+    color: #66CC00;
+}
+#twitter_div ul {
+    padding: 2px;
+    margin: 0;
+    color: #4C4C4C;
+    width: 190px;
+}
+#twitter_div li {
+    line-height: 9pt;
+    list-style: none;
+    text-align: left;
+    margin: 2px 8px;
+    padding: 10px 0;
+    overflow: hidden;
+}
+

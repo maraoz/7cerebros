@@ -1,0 +1,40 @@
+window.addEvent('domready', function () {
+	var data = [
+		"De todo el peso de nuestro cuerpo, el cerebro solo representa entre el 1,5% y 2%." ,
+		"El peso aproximado del cerebro es de 1,4 kilogramos en un varón y de 1,25 kilogramos en una mujer." ,
+		"El consumo de energía (en forma de oxígeno y glucosa) del cerebro con relación al resto del cuerpo es aproximadamente del 20%." ,
+		"Cuanto más se entrene en realizar varias actividades al mismo tiempo, menos energía empleará el cerebro en realizar esas mismas funciones en un futuro, pues no necesitará crear los enlaces sinápticos necesarios que le permiten ese tipo de \"multitarea\"." ,
+		"El cerebro no puede ni debe consumir más del 20% de la energía general del cuerpo. Es la cantidad que soporta el ser humano, más energía posiblemente desemboque en patologías mentales." ,
+		"Una red neuronal es unas 100 veces más compleja que la red telefónica mundial, son casi 100 trillones de interconexiones." ,
+		"Un estudio hecho público durante el mes de febrero de 2009 estimó que el cerebro humano posee un total aproximado de 86.000 millones de neuronas." ,
+		"El cerebro de un humano contiene la misma cantidad de neuronas que el cerebro de un primate del mismo porte, la diferencia entonces entre el cerebro del Homo sapiens y los otros grandes primates estaría en la cualidad (arquitectura cerebral en este caso) y no en la cantidad de neuronas." ,
+		"El cerebro humano puede almacenar información que \"llenaría unos veinte millones de libros\" (Carl Sagan)" ,
+		"El cerebro del infante humano se triplica en tamaño durante su primer año." ,
+		"La región inferior parietal del cerebro de Albert Einstein era un 15% más ancha que el de un individuo promedio. Se cree que esta región controla el pensamiento matemático y la capacidad cognitiva visual-espacial." ,
+		"Cada hemisferio cerebral tiene un estilo de procesamiento de la información que recibe. El hemisferio izquierdo analiza en el tiempo, mientras que el derecho sintetiza en el espacio." ,
+		"Todas las emociones se encuentran en, o son, un reflejo de cambios químicos e impulsos eléctricos en el cerebro." ,
+		"La afirmación de que los humanos sólo usamos el 10% de nuestro cerebro es un mito. El cerebro es utilizado casi en su totalidad, sólo que no se ponen en funcionamiento todos los sectores a la vez." ,
+		"La organización externa, es decir las rutinas y los buenos hábitos, es clave para organizar el cerebro." ,
+		"Una sola neurona es capaz de guardar todos los datos que hemos acumulado sobre una determinada persona o sobre un hecho específico." ,
+		"Toda experiencia sensorial, consciente o inconsciente, queda registrada en el aparato neuronal y podrá ser evocada posteriormente." ,
+		"El registro fósil más viejo de un cerebro que se ha encontrado, es el de los peces del género inioptengius que vivieron hace unos 300 millones de años." ,
+		"El cerebro humano no es el más grande. Las ballenas y elefantes tienen mayor masa cerebral. Pero en relación al peso corporal, los humanos llevan la delantera." ,
+		"Actualmente se cree que las magnitudes de energía que el cerebro humano es capaz de producir resultan insuficientes para permitir la transmisión de información cerebro a cerebro (telepatía) sin otros instrumentos de por medio." ,
+		"El sistema nervioso es capaz de transmitir información a travez de impulsos nerviosos a una velocidad de hasta 362 kilómetros por hora." ,
+		"Un impulso nervioso puede ir desde cualquier punto del cuerpo humano hasta cualquier otro y volver en menos de 0,04 segundos.",
+		"De qué sirve el ingenio cuando no nos divierte? No hay nada más fatigoso que un ingenio triste.  (Ivan Turgueniev)",
+		"Es más fácil juzgar el ingenio de el hombre por sus preguntas que por sus repuestas. (Duque de Levis)",
+		"El ingenio de un hombre, la sabiduría de muchos. (Bertrand Russel)",
+		"Jamás hubo un gran ingenio sin un poco de locura. (Séneca)",
+		"El ingenio está formado por un tercio de instinto, un tercio de memoria y un tercio de voluntad. (Carlo Dosis)",
+		"No basta tener buen ingenio, lo principal es aplicarlo bien. (René Descartes)",
+		"La historia hace a los hombres sabios; la poesía, ingeniosos; las matemáticas, sutiles; la filosofía natural, profundos; la moral, graves; la lógica y la retórica, hábiles para la lucha. (Francis Bacon)",
+		"Es dudoso que el género humano logre crear un enigma que el mismo ingenio humano no resuelva. (Edgar Allan Poe)",
+		"No deja de ser humillante para una persona de ingenio, saber que no hay tonto que no le pueda enseñar algo. (Jean Baptiste Say)",
+		"Tiene ingenio el hombre que dice aquello que nosotros habríamos dicho si se nos hubiera ocurrido antes. (Cristóbal Zaragoza)",
+		"La verdad nos iluminará, pero las mentiras son los que ponen a trabajar nuestro ingenio. (Anónimo)",
+		"El ingenio debe estar siempre cinco o seis grados por encima de la temperatura mental del público; pero no más, pues entonces le produce dolor de cabeza. (Stendhal)"
+	];
+	var container = $('curiosidades');
+	if (container) container.set('text', data.getRandom());
+});

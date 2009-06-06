@@ -15,9 +15,13 @@ def bind(controller_class, *args, **kwargs):
 # Map all URLs to their controllers here
 
 ROUTES = [
-    ('/', bind(PublicPage, 'common/index.mako')),
-    ('/login', bind(PublicPage, 'common/login.mako')),
-    ('/concurso/tetravex', bind(PrivatePage, 'concurso/tetravex.mako')),
-    ('/concurso/sokoban', bind(AdminPage, 'concurso/sokoban.mako')),
+    ('/', bind(PublicPage, 'public/home.html')),
+    ('/login', bind(PublicPage, 'public/home.html')),
+    ('/sponsors', bind(PublicPage, 'public/sponsors.html')),
+    ('/contacto', bind(PublicPage, 'public/contacto.html')),
+    ('/info', bind(PublicPage, 'public/info.html')),
+    ('/perfil', bind(PrivatePage, 'private/perfil.html')),
+    ('/practica', bind(PrivatePage, 'practica/index.html')),
+    ('/concurso', bind(PrivatePage, 'concurso/index.html')),
 ]
 
