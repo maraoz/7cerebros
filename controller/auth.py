@@ -14,20 +14,22 @@ logger = logging.getLogger(__name__)
 class AuthenticationError(Exception):
     """ Raised when authentication fails (invalid credentials) """
 
-class PermissionError(Exception):
+class PermissionError(AuthenticationError):
     """ Raised when authenticated user has no rights to do an operation """
 
 def authorize(admin=False, user_arg='user', session_arg='session'):
     """
     Decorator factory to authorize a user to perform a restricted operation.
-    If `admin` flag is set, also checks is user has admin rights.
+    If `admin` flag is set, also checks if user has admin rights.
     Example: Use @autorize(...) on a request handler method.
 
     :parameters:
         admin : bool
             Optional flag to check admin rights (default: `False`)
-        key : str
-            Keyword argument to be appended to decorated function
+        user_arg : str
+            Keyword argument to pass `User` instance (`None` to ignore)
+        session_arg : str
+            Keyword argument to pass `Session` instance (`None` to ignore)
 
     :returns:
         Decorator function to be applied on a restricted operation.
@@ -75,16 +77,9 @@ def is_admin(user):
     """ Returns `True` only if the user has admin rights """
     return user.username in ['admin', 'scoffey'] # TODO
 
-def signup(username, password, confirm_password, mail, firstname, \
-        lastname, birthdate, dni, registration_reference):
-    USERNAME_PATTERN = re.compile('[a-z][a-z0-9_]+')
-    EMAIL_PATTERN = re.compile('^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$')
-    # TODO
-    errors = {}
-    if not (len(username) >= 4 and USERNAME_PATTERN.match(username)):
-        errors['username'] = username
-    if not (len(password) >= 8 and password == confirm_password):
-        errors['password'] = ''
+def signup(username, password, mail, firstname, lastname, birthdate, dni, \
+        registration_reference):
+    """ Creates a new (persistent) `User` instance and sets up his session """
     user = User(username=username, password=secretize(password), mail=mail, \
         firstname=fistname, lastname=lastname, birthdate=birthdate, dni=dni, \
         registration_reference=registration_reference)

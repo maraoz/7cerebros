@@ -7,13 +7,13 @@ import logging
 from google.appengine.ext import webapp, db
 from google.appengine.ext.webapp import template
 
-from controller.auth import authorize
+from controller.auth import authorize, AuthenticationError
 
 logger = logging.getLogger(__name__)
 
 class BaseController(webapp.RequestHandler):
 
-    BASEDIR = os.path.join(os.path.dirname(__file__), '..', 'view')
+    BASEDIR = os.path.join(os.path.dirname(__file__), os.pardir, 'view')
 
     def render(self, template_name, template_values=None):
         try:
@@ -26,10 +26,18 @@ class BaseController(webapp.RequestHandler):
                     template_name, template_values)
             raise
 
+    def handle_exception(self, exception, debug_mode):
+        logger.error(exception)
+        if isinstance(exception, AuthenticationError): # TODO: require login...
+            self.render('common/notfound.html') # a forbidden error page
+        self.render('common/error.html') # a server error page
+        # TODO: set HTTP status: 500, 400, etc.
+        # TODO: be verbose on debug_mode
+
 class PublicPage(BaseController):
 
     def __init__(self, template_name):
-        super(BaseController, self).__init__()
+        super(PublicPage, self).__init__()
         self.template_name = template_name
 
     def get(self):
