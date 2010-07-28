@@ -1,0 +1,9 @@
+#Wed Jul 28 15:17:07 ART 2010
+eclipse.preferences.version=1
+encoding//controller/auth.py=utf-8
+encoding//controller/base.py=utf-8
+encoding//controller/main.py=utf-8
+encoding//controller/routes.py=utf-8
+encoding//controller/users.py=utf-8
+encoding//model/persistence/datamodels.py=utf-8
+encoding//model/persistence/sessions.py=utf-8

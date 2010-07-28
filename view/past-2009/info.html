@@ -1,0 +1,54 @@
+{% extends "../common/default.html" %}
+
+{% block css %}
+<style type="text/css">
+.login-form {
+    float: left;
+    width: 200px;
+    background: #CCCCCC /*#99FF00*/;
+    padding: 18px;
+    margin: 12px;
+}
+.login-form h2 {
+    font-size: 12pt;
+    margin: 0 0 8px 0;
+}
+#username, #password {
+    width: 190px;
+}
+#submit {
+    float: right;
+}
+.login-form p, form label {
+    font-size: 10pt;
+}
+.login-form input {
+    font-size: 12pt;
+}
+.login-error {
+    color: red;
+    font-weight: bold;
+}
+p.info {
+    font-size: 14pt;
+    margin: 24px;
+    float: left;
+    width: 680px;
+    line-height: 32pt;
+}
+p.info strong {
+    font-size: 20pt;
+}
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+<p class="info"><strong>"7cerebros, estruja tus neuronas 2009"</strong> fue un <strong>concurso de juegos de ingenio</strong> 
+en la web por un <strong>premio de $ 5.000</strong>. Aquellos jugadores que lograran resolver 7 problemas 
+de ingenio en el menor tiempo se harían finalistas. Se realizó una final presencial en la que los 7 mejores
+compitieron por el <strong>gran premio</strong>. Luego de 5 meses de intensa competencia y una excelente actuación
+en la final, <strong>Gonzalo Guastavino</strong> se consagró ganador de 7cerebros, edición 2009.
+¡Felicitaciones a todos los participantes!</p>
+{% endblock %}

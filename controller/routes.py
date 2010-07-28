@@ -18,14 +18,15 @@ def bind(controller_class, *args, **kwargs):
 ROUTES = [
     ('/', bind(PublicPage, 'public/home.html')),
     ('/login', bind(LoginPage, 'public/home.html')),
-    ('/registrate', bind(RegisterPage, 'public/register.html')),
-    ('/bases', bind(RegisterPage, 'public/bases.html')),
-    ('/sponsors', bind(PublicPage, 'public/sponsors.html')),
+    #('/registrate', bind(RegisterPage, 'public/register.html')),
+    #('/bases', bind(RegisterPage, 'public/bases.html')),
+    #('/sponsors', bind(PublicPage, 'public/sponsors.html')),
     ('/contacto', bind(PublicPage, 'public/contacto.html')),
-    ('/info', bind(PublicPage, 'public/info.html')),
-    ('/perfil', bind(PrivatePage, 'private/perfil.html')),
-    ('/practica', bind(PrivatePage, 'practica/index.html')),
-    ('/concurso', bind(PrivatePage, 'concurso/index.html')),
+    #('/info', bind(PublicPage, 'public/info.html')),
+    #('/perfil', bind(PrivatePage, 'private/perfil.html')),
+    #('/practica', bind(PrivatePage, 'practica/index.html')),
+    #('/concurso', bind(PrivatePage, 'concurso/index.html')),
+    ('/past/2009', bind(PublicPage, 'past-2009/info.html')),
     ('/.*', bind(PublicPage, 'common/notfound.html')),
 ]
 

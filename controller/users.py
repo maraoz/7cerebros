@@ -37,7 +37,7 @@ class RegisterPage(PublicPage):
             self.signup(*signup_args)
             self.redirect(PRIVATE_HOME_URL)
 
-    def validate(username, password, confirm_password, mail, firstname, \
+    def validate(self, username, password, confirm_password, mail, firstname, \
             lastname, birthday, birthmonth, birthyear, dni, \
             registration_reference, accept_tos):
         errors = {}
@@ -52,13 +52,14 @@ class RegisterPage(PublicPage):
         if not lastname.strip():
             errors['lastname'] = lastname
         birthtuple = (birthyear, birthmonth, birthday)
+        birthdate = None
         try:
             birthdate = datetime(int(i) for i in birthtuple)
         except Exception:
             errors['birthdate'] = '-'.join(birthtuple)
         try:
             dni = int(dni)
-            assert dni >= 1000000 and dni < 100000000 # in [1M, 100M)
+            assert 10**6 <= dni < 10**8 # in [1M, 100M)
         except Exception:
             errors['dni'] = dni
         if not accept_tos:

@@ -26,13 +26,13 @@ class BaseController(webapp.RequestHandler):
                     template_name, template_values)
             raise
 
-    def handle_exception(self, exception, debug_mode):
-        logger.error(exception)
-        if isinstance(exception, AuthenticationError): # TODO: require login...
-            self.render('common/notfound.html') # a forbidden error page
-        self.render('common/error.html') # a server error page
-        # TODO: set HTTP status: 500, 400, etc.
-        # TODO: be verbose on debug_mode
+    #def handle_exception(self, exception, debug_mode):
+    #    logger.error(exception)
+    #    if isinstance(exception, AuthenticationError): # TODO: require login...
+    #        self.render('common/notfound.html') # a forbidden error page
+    #    self.render('common/error.html') # a server error page
+    #    # TODO: set HTTP status: 500, 400, etc.
+    #    # TODO: be verbose on debug_mode
 
 class PublicPage(BaseController):
 
